@@ -1,0 +1,66 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //In this program, we will be working with variables. Variables are words that you
+    //use in a program to hold different types of data.
+    
+    //For example, the variable below is called "number".
+    //This variable is defined to contain an "int", or an "integer" value.
+    //"int" is one of many Data Types found in programming. There are some more below:
+    int number = 21;
+    //This specific variable, "number", contains the value 21.
+    
+    cout << "number = " << number << endl;
+    //Now we are going to print the value contained inside of "number" to the console.
+    //First we make the cout statement print a word, then we
+    //make it print our "number variable". Notice the empty space after the (=) and
+    //before the ("). This makes it so that the console prints
+    //"number = 21" rather than "number =21". See the difference?
+    //Also notice that we don't put our "number" variable in quotes. This is because
+    //we want the console to print the value contained within "number",
+    //not the characters n, u, m, b, e, and r.
+    
+    
+    double decimal = 4.53;
+    //This variable is called "decimal". You can call a variable almost anything you want.
+    //This is of type "double", which is a decimal value like 4.3, 0.32, or 45.201.
+    //Let's print this one to the console, as well:
+    cout << "decimal = " << decimal << endl;
+    
+    char letter = 'a';
+    //This variable is called "letter", and is of type "char" (short for "character").
+    //This type is used to hold single characters of text. It could even hold one of
+    //the special characters, like '\n', or new line.
+    //Notice that for char, you use single quotes (') rather than double quotes (").
+    //Let's print the "letter" variable:
+    cout << "letter = " << letter << endl;
+    
+    string word = "Hello!";
+    //This variable is called "word" and is of type "string".
+    //Strings are used to hold strings of characters (or chars) together.
+    //We've already  worked with strings in the previous two exercises.
+    //Let's print this one out. Can you figure out how to print this one yourself?
+    cout << "word = " << word << endl;
+    
+    bool trueOrFalse = true;
+    //This last variable is called "trueOrFalse" and is of type "bool", or "boolean."
+    //Bool types hold only two values: "true" or "false".
+    //Bools are used for many things, including "if-statements" which we will
+    //talk about later.
+    //Let's see what happens when we print out this variable:
+    cout << "trueOrFalse = " << trueOrFalse << endl;
+    //Note that the variable name "trueOrFalse" contains three words: "true", "Or",
+    //and "False". This naming method is called camelCase, because each capital
+    //letter looks like the hump on a camel. Each individual word (except
+    //the first one) is captalized to help differentiate them.
+    //It's common to keep the first letter of each variable name lowercased,
+    //because uppercased first letters are normally reserved for something
+    //called "classes".
+    
+    
+    return 0; 
+    
+}

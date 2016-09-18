@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //An array is a single variable that holds a ton of different values. Let's say you need to hold a list of 10 names.
+    //Rather than making 10 different variables with unique names, we can just put all of the names into one array.
+    
+    //Let's define a new array:
+    string myArray[10] = {"Jerry", "Bob", "Mary", "Susan", "Karen", "Scott", "Kelly", "Mark", "Matt", "George"}; //Don't forget the (;)
+    //This array now holds all of the different names. If you want to access the first array, you do this:
+    cout << "The first name in the array: " << myArray[0] << endl;
+    //To access the first item in the array, you write the name of the array, and the the "index" of the
+    //item you want to access. Notice that to access item 1 on the list, you DON'T write myArray[1].
+    //Instead, you use the index 0. THis is because arrays start counting at 0, not 1.
+    //Knowing this, what do you think the index for the last item on this list is?
+    
+    //Let's print out all the items in the array:
+    cout << "\nAll the names:\n";
+    cout << myArray[0] << endl;
+    cout << myArray[1] << endl;
+    cout << myArray[2] << endl;
+    cout << myArray[3] << endl;
+    cout << myArray[4] << endl;
+    cout << myArray[5] << endl;
+    cout << myArray[6] << endl;
+    cout << myArray[7] << endl;
+    cout << myArray[8] << endl;
+    cout << myArray[9] << endl;
+    cout << endl;
+    
+    //Here's another way to define an array:
+    int numberArray[5]; //This will be an array of integers. Notice that I did not initialize it yet. That's because I'm
+    //goint to define each number one-by-one:
+    numberArray[0] = 45;
+    numberArray[1] = 38;
+    numberArray[2] = 123;
+    numberArray[3] = 4;
+    numberArray[4] = 67;
+    
+    //Can you figure out how to print this array with a loop? You can use a while loop, or a for loop.
+    //Give it a try!
+    
+    //I'm going to use a for loop:
+    for (int i = 0; i < 5; i++) { //I set up a for loop that will make "i" go from 0 to 4.
+        
+        cout << numberArray[i] << endl; //I use "i" as the index for numberArray. Remember it has to start at 0.
+        
+    }
+    
+    //And that's it! Rather that writing out each cout statement, you can print really long arrays like this.
+    //So that's all we need to know about arrays for now!
+    
+    return 0;
+}

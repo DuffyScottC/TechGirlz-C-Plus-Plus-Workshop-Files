@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std; 
+
+int main() 
+{
+   
+   //This is an example of how the program could go.
+   
+   //Create a variable to hold the user's name:
+   string userName = "Linus"; //Initialize the variable to hold a random string
+   
+   //Ask the user to input their name:
+   cout << "Please enter your name:\n";
+   
+   //Get the input from the user:
+   cin >> userName;
+   
+   //Say Hello!
+   cout << "Hello, " << userName << "!\n";
+   
+   return 0; 
+    
+}

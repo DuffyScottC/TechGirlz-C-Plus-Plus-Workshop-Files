@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //Let's make a program that allows a user to say "yes", "no", or "maybe" to a question.
+    
+    string input = ""; //A variable to hold the user's answer
+    
+    cout << "Do you have an idea of what program you want to write for your final project?\n";
+    cout << "Enter \"yes\", \"no\", or \"maybe\":\n"; //Notice that you can ask the cout statement to print a quotation mark by typing (\").
+    
+    cin >> input; //Prepare for user input
+    
+    if (input == "yes") { //The user entered "yes"
+        
+        cout << "Good! Start thinking about how you can use what you've been learning today to make that program!\n";
+        
+    } else if (input == "no") { //The user entered "no"
+        
+        cout << "That's fine! Keep thinking about it! Maybe talk to your classmates about some ideas!\n";
+        
+    } else if (input == "maybe") { //The user entered "maybe"
+        
+        cout << "Wonderful! Now you can start brainstorming. Try talking to your classmates about your ideas!\n";
+        
+    } else { //Now we need to tell the program what to do if the user entered something other than "yes", "no", or "maybe". What if they entered "YES"? Strings are case sensitive, so "YES" would take the program down here, not to the "yes" section of the if-statement.
+        
+        cout << "That answer wasn't an option. Please try again.\n";
+        
+    }
+    
+    //That's the end! In the next exercise, you'll try to make a calculator program that works similarly to this one.
+    
+    return 0;
+}

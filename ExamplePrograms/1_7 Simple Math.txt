@@ -1,0 +1,101 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   //In this exercise, we will learn how to do simple math calculations!
+   //For this exercise, you should run the program after each new cout
+   //statement. This will allow you to see the results actively. 
+   
+   //We will print the results of the calculations to the console
+   //in two different ways.
+   //1. Perform the operation in the cout statement directly
+   //2. Put the answer in a variable, then output the variable
+   
+   //Here is the first operation: Addition
+   cout << "4 + 5 = " << 4 + 5 << endl; 
+   // To add two numbers together, simply use the (+) sign!
+   
+   //Guess how you subtract two numbers from each other?
+   //Like this:
+   cout << "6 - 2 = " << 6 - 2 << endl;
+   //Simply use the dash, or minus sign (-).
+   
+   //Now we multiply two numbers together:
+   //This symbol is a little less intuitive. We use the
+   //asterisc symbol (*) accessed by sholding shift
+   //and pressing the (8) key.
+   cout << "4 * 2 (or 4 times 2) = " << 4 * 2 << endl;
+   
+   //Finally, we can divide two numbers with the forward
+   //slash symbol (/).
+   cout << "9 / 3 (or 9 divided by 3) = " << 9 / 3 << endl;
+   
+   //And those are the basic mathematic operations!
+   //Let's see how it works with variables HOLDING numbers,
+   //rather than straight-up numbers.
+   
+   int num1 = 7;
+   int num2 = 4;
+   
+   cout << "num1 * num2 (or 7 * 4) = " << num1 * num2 << endl;
+   
+   //As you can see, it works the same way. 
+   //Now let's look at what happens when we divide the two numbers.
+   //You know that 7 / 4 should equal 1.75, right? Look at what
+   //the console outputs for this operation:
+   cout << "num1 / num2 (or 7 / 4) = " << num1 / num2 << endl;
+   
+   //As you can see, when you run the program, it says the answer
+   //for num1 / num2 (or 7 / 4) is equal to 1. What? We know
+   //that's not true! Why does this happen?
+   
+   //This is part of the nature of the "int" data type.
+   //"int" variables cannot hold decimal numbers like 1.75.
+   //Instead, they "truncate" the decimal, or get rid of it, 
+   //and just store the whole number part (the part before
+   //the decimal point).
+   
+   //If we don't want the program to do this,
+   //we need to use the "double" or "float" variable types.
+   //Both of these data types hold decimal numbers,
+   //but "double" holds a longer value than "float".
+   
+   double dec1 = 7;
+   double dec2 = 4;
+   
+   //Let's see what happens when we output these two variables
+   //divided by each other.
+   cout << "dec1 / dec2 (or 7.0 / 4.0) = " << dec1 / dec2 << endl;
+   //Yes! This outputs the correct answer. We have one more thing to 
+   //try: storing the operation in a variable, rather than
+   //doing it directly in the cout statement.
+   
+   //You can define a variable with direct number values:
+   int answer1 = 4 + 8;
+   cout << "answer1 = " << answer1 << endl;
+   
+   //And you can define a variable with other variables:
+   int answer2 = num1 * num2;
+   cout << "answer2 = " << answer2 << endl;
+   
+   //Keep in mind, you need to use the appropriate data type
+   //for the answer you need. For instance:
+   int answer3 = dec1 / dec2;
+   //"answer3" will hold the value 1, not 1.75, because it is 
+   //and "int" not a "double" or a "float". 
+   cout << "answer3 = " << answer3 << endl;
+   
+   //If we want it to hold a decimal answer, 
+   //we need to define it as a
+   //decimal data type:
+   double answer4 = dec1 / dec2;
+   cout << "answer4 = " << answer4 << endl;
+   
+   //So there you have it! That is the end of this program! 
+   //You're doing a great job so far!
+   //Now we're going to 
+   
+   return 0;
+}

@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std; 
+
+int main() 
+{
+   
+   //This is a slightly more advanced version.
+   //This is an example of how the program could go.
+   
+   //Create a variable to hold the user's first name:
+   string firstName = "Linus"; //Initialize the variable to hold a random string
+   //Create a variable to hold the user's last name:
+   string lastName = "Lucy";
+   
+   //Ask the user to input their first name:
+   cout << "Please enter your first name:\n";
+   
+   //Get the first name input from the user:
+   cin >> firstName;
+   
+   //Ask the user to input their last name:
+   cout << "Please enter your last name:\n";
+   
+   //Get the last name input from the user:
+   cin >> lastName;
+   
+   //Say Hello!
+   cout << "Hello, " << firstName << " " << lastName << "!\n";
+   //You can combine as many elements into one cout statement as you want (although
+   //the longer ones are usually broken up into many different cout statements
+   //for easier reading.).
+   
+   return 0; 
+    
+}

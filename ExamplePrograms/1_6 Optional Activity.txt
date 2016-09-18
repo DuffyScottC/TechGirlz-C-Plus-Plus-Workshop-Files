@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   //Look at the bottom for Optional Activity additions.
+   //Here is an example of how the program could be written:
+   
+   //Define a variable to hold the string:
+   string wordToRhyme = "range"; //Notice that it is missing the first letter
+   
+   //The user has to input the string that we need to find rhymes for:
+   cout << "Please input everything but the first letter of the word you need to rhyme:\n";
+   
+   //Recieve input:
+   cin >> wordToRhyme;
+   
+   //Now we output the rhymes for the user:
+   cout << "A" << wordToRhyme << "\n";
+   cout << "B" << wordToRhyme << "\n";
+   cout << "C" << wordToRhyme << "\n";
+   cout << "D" << wordToRhyme << "\n";
+   cout << "E" << wordToRhyme << "\n";
+   cout << "F" << wordToRhyme << "\n";
+   cout << "G" << wordToRhyme << "\n";
+   cout << "H" << wordToRhyme << "\n";
+   cout << "I" << wordToRhyme << "\n";
+   cout << "J" << wordToRhyme << "\n";
+   cout << "K" << wordToRhyme << "\n";
+   cout << "L" << wordToRhyme << "\n";
+   cout << "M" << wordToRhyme << "\n";
+   cout << "N" << wordToRhyme << "\n";
+   cout << "O" << wordToRhyme << "\n";
+   cout << "P" << wordToRhyme << "\n";
+   cout << "Q" << wordToRhyme << "\n";
+   cout << "R" << wordToRhyme << "\n";
+   cout << "S" << wordToRhyme << "\n";
+   cout << "T" << wordToRhyme << "\n";
+   cout << "U" << wordToRhyme << "\n";
+   cout << "V" << wordToRhyme << "\n";
+   cout << "W" << wordToRhyme << "\n";
+   cout << "X" << wordToRhyme << "\n";
+   cout << "Y" << wordToRhyme << "\n";
+   cout << "Z" << wordToRhyme << "\n";
+   
+   //Additional options for the Optional Activity:
+   cout << "Th" << wordToRhyme << "\n";
+   cout << "Ph" << wordToRhyme << "\n";
+   cout << "Ch" << wordToRhyme << "\n";
+   cout << "Qu" << wordToRhyme << "\n";
+   cout << "Sh" << wordToRhyme << "\n";
+   
+   //And we're done!
+   return 0;
+}

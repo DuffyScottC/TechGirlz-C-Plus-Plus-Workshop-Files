@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    
+    int i = 10; //This is our iterator variable. We will use this to keep track of which number the loop is on.
+    
+    while (i >= 0) { //This is the beginning of a while loop. While loops only run as long as their condition is true.
+        //So as long as the variable i is greater than or equal to 0 (i >= 0) then the following code will run.
+        //Since "i" starts out as 10, and 10 is greater than 0, the code runs.
+        
+        cout << i << endl; //We output the number held by "i"
+        
+        i--; //This code means "subtract 1 from "i". So the first time this loop runs, "i" will become 9.
+        
+        //This loop runs again and again, subtracting 1 from "i" until finally, "i" is 0. Then the while loop will run one last time,
+        //and it will subract 1 from "i" making it equal to -1.
+        //Since -1 is not greater than or equal to 0, the while-loop's condition becomes false, and the loop ends.
+    }
+    
+    //Be wary of infinite loops. If we had not subtracted 1 from "i" each time the loop ran, then the condition will
+    //have never been false. The loop would continue looping until the program crashed, or until you stopped it.
+    
+    //Can you figure out how to make the program say "Blast off!" at the end of the countdown?
+    
+    //Here is where you place the "Blast off!" statement:
+    cout << "Blast off!\n";
+    
+    //So there you have it! Another fundamental concept of programming in your belt!
+    
+    return 0;
+}

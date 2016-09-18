@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //A while loop is extremely similar to a for loop. For loops are more stand-alone.
+    
+    //A for loop goes like this:
+    //(initialization; condition; increment)
+    for (int i = 1; i <= 10; i++) { //Notice that you can add 1 to a variable with the (++) operator. 
+        //The initialization is just the starting value for our iterator variable, "i"
+        //The condition serves the same function as the condition in our while loop.
+        //The increment is the operation done on "i" every time the loop runs.
+        
+        cout << i << endl;
+        
+    }
+    
+    return 0;
+}

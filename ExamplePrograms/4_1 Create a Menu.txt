@@ -1,0 +1,76 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //To create a menu, we will combine the menu we created in the Switch Statements, and create a reusable application
+    //so that you don't have to keep running it every time you want to play.
+    
+    //Copy and paste the program from the last file:
+    
+    //Let's make a variable to hold our own condition (true or false) to represent
+    //whether the user selected the "exit" option or not.
+    bool userExited = false;
+    
+    char input = 's';
+    //These definitions of the variables are up here outside of the loop we will make,
+    //because they only need to happen once.
+    
+    //Now let's make a while statement that looks like this:
+    
+    //while (userExited == false) {
+    //
+    //
+    //
+    //}
+    
+    //And copy and paste the menu cout statements and the switch statement into the while statement
+    //so that it looks like this:
+    while (userExited == false) { //This will continue to loop until "userExited" is set to "true".
+        
+        cout << "Choose an option:\n";
+        cout << "A. Rock\n";
+        cout << "B. Paper\n";
+        cout << "C. Scissors\n";
+        cout << "D. Exit\n";
+        
+        cin >> input;
+        
+        switch (input) {
+            case 'A':
+            case 'a':
+                cout << "Paper covers rock. I win!\n";
+                break;
+                
+            case 'B':
+            case 'b':
+                cout << "Tie! I chose paper, too.\n";
+                break;
+                
+            case 'C':
+            case 'c':
+                cout << "Rock breaks scissors. You win!\n";
+                break;
+                
+            case 'D':
+            case 'd':
+                cout << "Exiting program...\n";
+                
+                //If the user exited the program, then "userExited" should be true:
+                userExited = true;
+                //Now the "while" condition (userExited == false) will be false, and the program will close.
+                break;
+                
+            default:
+                cout << "Invalid input. Please enter the letter in front of the option you want to choose.\n";
+                
+        }
+        cout << endl; //This will help separate different iterations of the game.
+        
+    }
+    //And that's how you make a reusable menu!
+    
+    
+    return 0;
+}

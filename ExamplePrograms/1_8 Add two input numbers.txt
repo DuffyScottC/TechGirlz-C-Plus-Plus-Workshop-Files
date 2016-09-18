@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   //Here's an example of how this could go:
+   
+   //We need the variables to hold user input.
+   int num1 = 0;
+   int num2 = 0;
+   
+   //Now we need to tell the user to input the first number:
+   cout << "Please input an integer:\n";
+   //recieve the first number:
+   cin >> num1;
+   
+   //Now we need to tell the user to input the second number:
+   cout << "Please input another integer:\n";
+   //Recieve the second number:
+   cin >> num2;
+   
+   //Now let's put the addition of the two numbers 
+   //into a variable:
+   int sum = num1 + num2;
+   
+   //Now let's output the answer to the user:
+   cout << num1 << " + " << num2 << " = " << sum << "!\n";
+   //Notice how we output the two numbers
+   //the user input as well as the answer. This helps
+   //assure the user that the input was recieved successfully. 
+   
+   return 0;
+}

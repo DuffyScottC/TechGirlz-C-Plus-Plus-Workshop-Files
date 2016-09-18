@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std; 
+
+int main() 
+{
+   
+   //To recieve user input, you first need a variable to hold the user input.
+   //Let's make a string variable.
+   string userInput = "initialize";
+   //Why did we put the empty quotation marks? Well, very often it is neccessary
+   //to do what's called initializing your variable. This means you need to give it
+   //an initial value.
+   //Variables are called variables because they can change what value they are holding.
+   //For example, we could change the value withing userInput with the
+   //following statement:
+   userInput = "New value";
+   //Now userInput holds the text "New value" rather that "initialize". This means
+   //we can set the variable to hold something the user inputs without a
+   //problem.
+   
+   //The second thing we need to get user input is to tell the user we need inupt.
+   //Otherwise how will they know to give us a value?
+   cout << "Please enter a word (press enter when done):\n";
+   //We tell the user what we need, then tell them how to give it to us.
+   
+   //Now we need to accept the input. We do this with a "cin" statement.
+   //"cout" stands for "console out", and we use it for sending information to the
+   //console. What do you think "cin" stands for? 
+   cin >> userInput;
+   //Here, we use the "cin" (which stands for "console in") statement to begin
+   //receiving user input. 
+   //We use the >> symbol to indicate the start of the statement.
+   //Then we list the variable we want the information to be stored in.
+   //In this case, we use the "userInput" variable. 
+   
+   //Let's say the user input the word "dog". Now userInput holds the value "dog"
+   //instead of holding "New value".
+   
+   //Finally, we need to output a confirmation message to the user.
+   //We do this so that the user knows the program got the information correctly.
+   //This is not exactly neccessary, but it is a common convention to do so.
+   cout << "You input: " << userInput << ".\n";
+   //And we're done!
+   //Notice how we put a period at the end of the sentence, and created a new line
+   //when the sentence was over. 
+   
+   return 0; 
+    
+}

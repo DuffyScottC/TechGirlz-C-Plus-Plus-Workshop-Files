@@ -1,0 +1,70 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //Remember when we used if-statements to give a different answer based on user input?
+    //Well, switch statements are a more compact way to do that.
+    
+    //NOTE: Switch statements are typically only used with "int" and "char" data types, so that can limit you somewhat.
+    //They don't handel "strings" well, so when you need to provide a different answer based on a string,
+    //you should probably use an if-statement series.
+    
+    //Let's say we want a user to choose from a list of options: "Rock", "Paper", or "Scissors". Let's
+    
+    //Let's make a variable to hold user input:
+    char input = 's'; //I randomly chose a value tto initialize.
+    
+    //show the user the options they have:
+    cout << "Choose an option:\n";
+    cout << "A. Rock\n";
+    cout << "B. Paper\n";
+    cout << "C. Scissors\n";
+    cout << "D. Exit\n";
+    
+    //Get user input:
+    cin >> input;
+    
+    //Let's pretend that the imaginary opponent for this game of "Rock, Paper, Scissors" chose "Paper". Since there is
+    //a different outcome for each choice the user can make, the
+    
+    //Now we use a switch statement to handel the input:
+    switch (input) {
+        case 'A': //For each possible answer, we provide a "case". If the user enters "A", we want to give this answer.
+        case 'a': //What if the user enters a lowercase "a"? The cool thing about switch statements, is that it's easy
+            //to accout for multiple cases. Now, if the user enters either "A" or "a", the follwoing code will run:
+            
+            cout << "Paper covers rock. I win!\n";
+            break; //This "break" statement makes it so that we leave the switch statement. If we did not have this,
+            //the switch statement would "fall through" to the next "case" and run that code, even though "input"
+            //does not match the case.
+            
+        case 'B': //We provide cases for each of our menu options.
+        case 'b': //And the lower case version just in case.
+            cout << "Tie! I chose paper, too.\n";
+            break; //If you don't quite understand why we need the "break" statement, see what happens when you remove it.
+        case 'C':
+        case 'c':
+            cout << "Rock breaks scissors. You win!\n";
+            break;
+            
+        case 'D':
+        case 'd':
+            cout << "Exiting program...\n";
+            break;
+            
+            //Similar to how an "else" statement catches all other condtitions, a default statement is what runs
+            //when "input" does not match any of the above cases.
+            //If the user enters anything other than the cases we defined, run the default case:
+        default:
+            cout << "Invalid input. Please enter the letter in front of the option you want to choose.\n";
+            //We don't need a "break" for the last one, because there are no more cases for it to "fall through" to.
+    }
+    
+    //So there you have it!
+    //I encourage you to research how to create a random number, so that the imaginary player's choice can change every time
+    //you play the game. But we don't have time for that today, so we'll just have to settle for this.
+    
+    return 0;
+}

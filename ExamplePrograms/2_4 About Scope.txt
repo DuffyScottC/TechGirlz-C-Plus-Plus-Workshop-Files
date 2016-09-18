@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //Let's quickly talk about something called "scope".
+    
+    //The "scope" of the variable is "where it can be used". A variable's scope is determined by where it is defined.
+    
+    //This variable is defined in the main() function.
+    int mainVariable = 2;
+    
+    //This means it can be used everywhere withing the main() funciton, but no where else. For instance, it can be used in this if statement:
+    if (mainVariable == 2) {
+        mainVariable = 9; //It can even be used inside this if statement.
+    }
+    
+    //However, if you define a variable WITHIN an if statement:
+    if (mainVariable == 9) {
+        int denominator = 3; //This variable is defined within this particular if-statement's scope.
+    }
+    
+    //Then you cannot use that variable outside of the if-statement. That variable's scope is limited to anything within that if statement.
+    //If you try to use "denominator" out here, you will get an error.
+    
+    //So that's pretty much all you need to know about scope!
+    
+    return 0;
+}

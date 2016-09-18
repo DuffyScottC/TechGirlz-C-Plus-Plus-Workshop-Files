@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //Here's an example of how this program might work:
+    
+    //The user should be able to decide whether they want to add, subtract, multiply, or divide the two numbers they input.
+    
+    //First, let's get the two numbers the user wants to work with:
+    double num1 = 0;
+    double num2 = 0;
+    char operation = '+'; //This will hold the user's input. We only need one character (+, -, *, or /), so we'll make it a "char" (which stands for character, remember?)
+    
+    cout << "Enter the first number:\n";
+    cin >> num1;
+    
+    cout << "Enter the second number:\n";
+    cin >> num2;
+    
+    //Now we need the user to decide what to do with the numbers:
+    cout << "Enter the operation you would like to do (+, -, *, or /):\n";
+    cin >> operation;
+    
+    //Now we decide what to do with the user's input:
+    
+    if (operation == '+') {
+        
+        cout << num1 << " + " << num2 << " = " << num1 + num2 << ".\n";
+        
+    } else if (operation == '-') {
+        
+        cout << num1 << " - " << num2 << " = " << num1 - num2 << ".\n";
+        
+    } else if (operation == '*') {
+        
+        cout << num1 << " * " << num2 << " = " << num1 * num2 << ".\n";
+        
+    } else if (operation == '/') {
+        
+        cout << num1 << " / " << num2 << " = " << num1 / num2 << ".\n";
+        
+    } else {
+        
+        cout << "Invalid input. Please try again.";
+        
+    }
+    
+    return 0;
+}

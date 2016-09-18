@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //If you want to print the array backwards for the Optional Activity:
+    
+    int numberArray[5];
+    
+    numberArray[0] = 45;
+    numberArray[1] = 38;
+    numberArray[2] = 123;
+    numberArray[3] = 4;
+    numberArray[4] = 67;
+    
+    
+    for (int i = 4; i >= 0; i--) { //Change the loop statement to take "i" from 4 down to 0
+        
+        cout << numberArray[i] << endl;
+        
+    }
+    
+    
+    return 0;
+}

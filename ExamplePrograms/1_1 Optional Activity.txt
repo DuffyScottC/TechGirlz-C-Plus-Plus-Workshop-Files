@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std; 
+
+int main() 
+{
+    
+   cout << "Hello, Scott" << endl; //All you have to do to change the text printed to 
+                                   //the console is change the text within the quotation marks (")!
+                                   //Everything else about the program stays the same.
+   return 0; 
+    
+}

@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std; 
+
+int main() 
+{
+    
+   cout << "10, 9, 8, 7, 6, 5, 4, 3, 2, 1" << endl; 
+   //This statement prints out the text within the quotation marks.
+   //cout is a statement that tells the console to print the following code.
+   //The << symbol separates different sections of the print statement.
+   //The code "endl" tells the console to create a new line. The next cout statement 
+   //will start on a line below the first cout statment. 
+   
+   cout << "Blastoff!\n";
+   //This is a new cout statement. This also prints the text within the quotation marks.
+   //Notice that this cout statement does not contain an "endl" statement. Instead,
+   //it contains a strange combination of characters: "\n". Run the program and see
+   //what happens.
+   
+   //The backslash character (\) is used to indicate special characters.
+   //"\n" tells the program to make a new line, as if the program had pressed the 
+   //"Enter" key on a keyboard. 
+   
+   return 0; 
+    
+}

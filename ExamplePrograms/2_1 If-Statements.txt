@@ -1,0 +1,177 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+//MARK: Part 1
+    //Let's write a basic logic statment.
+    int myNumber = 40; //This is a regular integer variable.
+    //We're going to use this variable in our logic statement.
+    
+    //This first logic statement is called an if-statement. It goes like this:
+    if (myNumber > 30) {
+        //You start by writing "if" and then a "condition" surrounded by parenthesis.
+        //In our case, the condition is "myNumber > 30". This statement asks
+        //"is the value in myNumber greater than 30?"
+        //If myNumber is greater than 30, the condition statement returns "true".
+        //If not, the condition statement returns "false".
+        
+        
+        cout << myNumber << " is a pretty big number.\n";
+        
+    }
+    //Run this, and see what happens.
+    
+    //If the condition is "true", the code inside the curly brackets of the "if-statement" is run.
+    //If the condition is "false", the program skips over that code.
+    
+    //Change the number, and run it again. What happens when the number is
+    //something lower than 30?
+    
+    //Nothing happens, right? It doesn't say anything in the console.
+    //That's because we didn't tell it to do anything if the condition was "false".
+    //We only specified that it should say something if the condition was true.
+    
+    
+    
+    
+//MARK: Part 2
+    //Let's see how we can tell the code to do something if the condition is false.
+    //For this exercise, let's change the value of myNumber to equal 20.
+    myNumber = 20; //Remember that variables can have their values changed or modified.
+    
+    
+    //Copy the "if-statement" you just wrote, and paste it below (or just add on as you go).
+    
+    if (myNumber > 30) {
+        
+        cout << myNumber << " is a pretty big number.\n"; //cout statement 1
+    
+    } else { //Here is where we start writing somthing new.
+        //An "else-statement" is used to run code
+        //only if the above condition ("myNumber > 30") is false.
+        
+        cout << myNumber << " is a fairly small number.\n"; //cout statement 2
+        
+    }
+    //Run the program and see what happens.
+    
+    //If myNumber is greater than 30, then the code runs "cout statement 1"
+    //If myNumber is less than 30, then the code runs "cout statement 2"
+    
+    //Now what happens if myNumber is equal to 30? Give it a try above and run the code.
+    //See how nothing happens? Let's see how to run some code if myNumber is equal to 30:
+    
+    
+//MARK: Part 3
+    //What follows will be a series of statements. Two we've seen before ("if" and "else"),
+    //but the middle one ("else if") is new.
+    
+    if (myNumber > 30) { //If myNumber is greater than 30
+        //Run the following code
+        
+        cout << myNumber << " is greater than 30.\n";
+        
+    } else if (myNumber < 30) { //This checks yet another condition. If the above
+        //condition ("myNumber > 30") is false, then this else-if statement will check if
+        //"myNumber < 30", or if myNumber is less than 30.
+        //If the condition is true, it will run the following code:
+        
+        cout << myNumber << " is less than 30.\n";
+        
+    } else { //If myNumber is neither less than or greater than 30, then it must be equal to 30
+        //Run this code if the two above conditions are false (or if something else went wrong)
+        
+        cout << myNumber << " is equal to 30.\n";
+        
+    }
+    //Now, what happens if we want to check a condition, but only if another condition is true?
+    
+    
+//MARK: Part 4
+    //Let's write a new statement. Start a new program if you want, so that it's less confusing.
+    
+    //Let's make a new variable:
+    int number = 50;
+    
+    //Let's introduce another math symbol, called the "modulus operator".
+    //This action is done using the percent symbol (%) accessed by holding
+    //shift and pressing the (5) key on your keyboard.
+    //The modulus operator is used to find the remander of a division process.
+    //So
+    cout << "7 % 2 = " << 7 % 2 << " (or 7 divided by 2 has a remander of " << 7 % 2 << ")" << endl;
+    //Will print out "1". This means that 7 divided by 2 has a remainder of 1.
+    //This is because 7 cannot be evenly divided by 2. Can you figure out what
+    //the modulus operator will output for this division problem:
+    cout << "8 % 2 = " << 8 % 2 << " (or 8 divided by 2 has a remander of " << 8 % 2 << ")" << endl;
+    //The answer is "0". THat's because 8 can be evenly divided by 2, so the remainder is
+    //0, or no remainder. What does this mean? Well, it means that one thing we can
+    //use the modulus operator for is to determine whether a number can be divided by another number.
+    //If 10 can be divided by 5, then "10 % 5" will output "0".
+    
+    //Let's say we need a number that is even and greater than 40 (who knows why we would need
+    //a number like that, but let's just pretend).
+    
+    //So, let's create a program that first determines if a number is even (or divisible by 2),
+    //then checks if the number is greater than or less than 40 if the number is divisible by two.
+    
+    //There's no point in checking if the number greater than or less than 40, if the number is
+    //no even. You do that sort of thing in programming all the time, to speed things up for
+    //the users. If something needs to meet two conditions, but it doesn't meet the first one,
+    //then there's no point in wasting time checking the second condition.
+    
+    //Let's start with the first if-statement.
+    
+    //Note: when checkin if something is equal to something else in an "if-statement", you must
+    //use the "==" operator. This is so that the compiler doesn't think you're trying to set
+    //number TO BE 0. Your just checking the condition. For instance:
+    //"number = 0" Will make "number" hold the value 0 and forget what it was holding before.
+    //"number == 0" Will check if "number" is equal to 0. "number" still holds the same value as before.
+    
+    if ((number % 2) == 0) {//This is asking, "is the remainder of 'number' divided by 2 equal to 0?"
+        
+        //Notice that we put "number % 2" inside of parenthesis. This is so that there is no confusion
+        //about which operation should be done first. Remember the Order of
+        //Operations? "Please Excuse My Dear Aunt Sally" helps you remember which operations are done first
+        //by the code (and in math). First you do Parenthesis, then Exponents, the Multiplication,
+        //then Division, then Adding, then Subtraction last. (And you do every duplicate operation from left
+        //to right). By putting "number % 2" inside of parenthesis, we make sure the compiler is checking
+        //to see if "number % 2" is equal to 0, not just if "2" is equal to 0.
+        
+        //OK, so this code is run if "(number % 2) == 0" is true (because that means that "number" is
+        //divisible by 2, or that it's an even number).
+        //Now we need to check if "number" is greater than or less than 40. How do we do that?
+        //With a "nested if-statement". You can put an if-statement within another if-statement.
+        
+        if (number > 40) { //If the number is greater than 40
+            //Run the following code:
+            
+            cout << number << " is the number you need! It's even, and it's greater than 40.\n";
+            
+        } else if (number < 40) {
+            //Run the following code:
+            
+            cout << number << " is not the number you need. It's even, but it is smaller than 40.\n";
+            
+        } else {
+            //Run the following code:
+            
+            cout << number << " is not the number you need. It's even, but it is equal to 40.\n";
+            
+        }
+        
+    } else { //This else statement is paired with the first if statement up above. ("if ((number % 2) == 0)")
+        //If the condition "(number % 2) == 0" is false, run the following code:
+        
+        cout << number << " is not the number you need. It's not even.\n";
+        
+    }
+    
+    //So there you have it! if, else, and if-else statements are fundamentally important to any programming
+    //language. And you just built four different programs using them! How's that for awesome!?
+    
+    
+    
+    return 0;
+}

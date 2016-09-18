@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    //Here's how a student might do the Optional Activity"
+    
+    int i = 10;
+    
+    while (i >= 0) {
+        
+        cout << "T minus " << i << " seconds." << endl; //Nothing changes except for this line.
+        
+        i--;
+    }
+    
+    cout << "Blast off!\n";
+    
+    return 0;
+}

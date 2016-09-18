@@ -1,0 +1,39 @@
+//This is a comment! Any text written after the two forward slashes (//) 
+//will be ignored by the compiler.
+
+//Comments are used to describe what the program does to people reading the code.
+
+//Try writing a comment at the top of your code that contains 
+//your name, today's date, and the name of this program ("Hello World").
+
+#include <iostream> //This is a library. 
+                    //We are "importing" a bunch of code that other people 
+					//have written, so that we don't have to write it.
+
+using namespace std; //The specifics of this are a little beyond the scope of this workshop. 
+                     //Suffice it to say, this makes writing the programs a little easier.
+                     //The semicolon (;) indicates the end of a line. 
+					 //The code will produce an error without it.
+int main() //This is called the "main function." 
+           //Functions will be described more later in this workshop.
+           //"int" stands for "integer". An integer is a whole number, 
+		   //like 1, 2, 5, or 235. The "int" means that the "main function" 
+		   //"returns" an integer when the program is done. 
+		   //This will be further explained later.
+{ //This is called a curly bracket. This represents the start of the "main function".
+
+   cout << "Hello World" << endl; //This line of code actually does something! 
+   //It prints the words "Hello World" to the console window.
+   //What does that mean? Why don't you run the code and find out! 
+   //Ask your instructor how to run your code)
+   //As you can see, a little window (called the console window) 
+   //opens up and displays the words "Hello World". 
+   
+   return 0; //This is that "return" thing I mentioned above. 
+   //This "main function" returns an integer value (0) to let the 
+   //programmer know that the program executed successfully. 
+   
+} //This curly bracket represents the end of the "main function". 
+
+//Congratulations! You just wrote your very first program! 
+//You're well on your way to becoming a programmer!
