@@ -1,0 +1,265 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red196\green26\blue22;\red170\green13\blue145;
+\red92\green38\blue153;\red0\green116\blue0;\red28\green0\blue207;\red46\green13\blue110;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab543
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 #include \cf3 <iostream>\cf2 \
+\cf0 \
+\cf4 using\cf0  \cf4 namespace\cf0  \cf5 std\cf0 ;\
+\
+\cf4 int\cf0  main() \{\
+    \
+    \cf6 //MARK: Define variables\cf0 \
+    \cf6 //Variables are used throughout the program to hold different values of different types.\cf0 \
+    \cf4 char\cf0  playerInput = \cf7 'n'\cf0 ; \cf6 //This is a variable. It holds "characters" or "letters" inside of it. This variable is used to hold the letters input by the person playing this game.\cf0 \
+    \cf4 char\cf0  whosTurnIsIt = \cf7 'X'\cf0 ; \cf6 //This variable holds a different letter in it than "playerInput". This variable (for this program) holds either "X" or "O", depending on whose turn it is in the tic tac toe game.\cf0 \
+    \cf4 char\cf0  gameBoard[\cf7 9\cf0 ] = \{\cf7 '1'\cf0 , \cf7 '2'\cf0 , \cf7 '3'\cf0 , \cf7 '4'\cf0 , \cf7 '5'\cf0 , \cf7 '6'\cf0 , \cf7 '7'\cf0 , \cf7 '8'\cf0 , \cf7 '9'\cf0 \}; \cf6 //This is somethinig called an array. An array acts like a group of similar-type variables. The array groups the values together so that we don't have to make 9 different variables to juggle and keep track of their names. This variable holds more characters (or letters), just like the ones above. You can tell because they are created (or defined) using the "char" keyword, which stands for "character".\cf0 \
+    \cf6 //"gameBoard" is used to hold the characters used to make our Tic Tac Toe game board. Run the program to see what the game board looks like.\cf0 \
+    \cf4 bool\cf0  spotWasUsed[\cf7 9\cf0 ] = \{\cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 , \cf4 false\cf0 \}; \cf6 //This is another array of a new variable type: Boolean. The keyword "bool" is short for "boolean". Bool types hold only two values: "true" or "false". This array, called "spotWasUsed" holds 9 boolean values (all of them false).\cf0 \
+    \cf6 //"spotWasUsed" is used to keep track of whether or not a spot on the gameboard was used. This is neccessary, because no two players should be able to use the same spot. For instance, if player 1 places an "X" in spot 3, then player two can't change that spot to an "O", or that would be cheating. Thus, when player 1 places the "X" in spot 3, we set the third item in this array to be true, to indicate that the spot has been used.\cf0 \
+    \cf4 bool\cf0  gameIsPlaying = \cf4 true\cf0 ; \cf6 //This will be used as our condition to end the loop. There are three ways to end the loop and close the program: Someone wins, there's a tie, or someone wants to quit the game. If one of those three things happens, we set "gameIsPlaying" to "false".\cf0 \
+    \cf4 bool\cf0  switchTurns = \cf4 true\cf0 ; \cf6 //Usually, the game would switch whose turn it is (from X to O) every time the player enters a number for a spot. However, what if player X inputs the letter "F", instead of the numbers 1 through 9? Then we want to tell player X to try again, and we don't want to switch turns. That's what this variable is for.\cf0 \
+    \cf4 bool\cf0  thereWasATie = \cf4 false\cf0 ; \cf6 //This little variable is used for a single purpose: To tell the program whether someone won the game, or if there was a tie. That is because if someone won, we want to congratulate that player. If there was a stalemate, we should congragulate both players.\cf0 \
+    \
+    \cf6 //A "cout" statement is used to output text to the console (that little window that pops up when you run the program).\cf0 \
+    \cf6 //First, we have to tell the players how to play:\cf0 \
+    \cf5 cout\cf0  << \cf3 "Tick Tac Toe Rules:\\n"\cf0 ;\
+    \cf5 cout\cf0  << \cf3 "There are 9 spots on the board. Each player (X and O) takes turns entering the number of the spot they want to place their letter on. To win, get three in a row of your letter. Enter \\"E\\" to exit the game. Have fun!\\n"\cf0 ;\
+    \
+    \cf6 //Marks like the one below are used to tell people reading the code (like you!) where certain sections begin.\cf0 \
+    \cf6 //MARK: Run the game loop\cf0 \
+    \cf4 while\cf0  (gameIsPlaying == \cf4 true\cf0 ) \{ \cf6 //This is a while statement. While loops are used to loop the same code over and over until the while loop's "condition" is false. In this case, the condition is the part that says "gameIsPlaying == true". This part asks "is the value 'gameIsPlaying' holding equal to 'true'?" If it is, the loop runs. If it is not (if "gameIsPlaying" equals "false"), then the loop will stop running. As long as the loop is running, the game will play. When the loop ends, the game will be over.\cf0 \
+        \
+        \cf6 //MARK: Output the game board to the user\cf0 \
+        \cf6 //Now for this game, we only have the console to work with. The console is text-based, so we have to output the game board using text. Using "cout" statements, we can output words or even the values held withing variables and arrays. Since the array "gameBoard" holds the characters we want to make the game board out of, we will use it to make our board. If you want to access "gameBoard"'s first value, you have to write "gameBoard[0]". "0" is the "index" of the first value. If you want to access the second value, you write "gameBoard[1]", because "1" is the "index" of the second value. There are 9 total values in "gameBoard", and the indexes start counting from zero. Therefor, the last index should be "8", to access the 9th value.\cf0 \
+        \
+        \cf6 //"gameBoard" holds the characters "1, 2, 3, 4, 5, 6, 7, 8, and 9". Therefore, the board will look like this:\cf0 \
+        \cf6 // 1 2 3\cf0 \
+        \cf6 // 4 5 6\cf0 \
+        \cf6 // 7 8 9\cf0 \
+        \cf6 //Each number represents a spot on the board. The user will be able to enter the number of the spot they want to place there letter (X or O) on.\cf0 \
+        \
+        \cf5 cout\cf0  << \cf8 endl\cf0 ; \cf6 //"endl" is used in "cout" statements to make a new line. Using "endl" (which stands for "end line" is equivalent to pressing the "Enter" key on your keyboard.\cf0 \
+        \cf5 cout\cf0  << \cf3 "It's "\cf0  << whosTurnIsIt << \cf3 "'s turn.\\n"\cf0 ; \cf6 //If you want to put a variable in a cout statement, you have to leave it outside of the quotation marks. The program only recognizes variables if they are not in quotation marks. You have to put a "<<" between each item in the "cout" statement. Remember the first value we put in "whosTurnIsIt"? Up at the top, we set it to hold "X". So, this first "cout" statement will say "It's X's turn.". What's that odd "\\n" at the end? Well, that does the same thig as "endl". It creates a new line, just like pressing "Enter". This is used to help the players keep track of whose turn it is. When it's O's turn, it will output "It's O's turn." because whosTurnIsIt will hold "O" instead of "X". That's why their called "variables". Because their value can vary, or change.\cf0 \
+        \cf5 cout\cf0  << gameBoard[\cf7 0\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 1\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 2\cf0 ] << \cf8 endl\cf0 ; \cf6 //For this "cout" statement, we're outputting the first, second, and third values held within "gameBoard" with spaces in between them. The first time the program runs, it will output "1 2 3" and then a new line. If player X wants to place an "X" on spot 1, then this line will output "X 2 3" instead.\cf0 \
+        \cf5 cout\cf0  << gameBoard[\cf7 3\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 4\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 5\cf0 ] << \cf8 endl\cf0 ;\
+        \cf5 cout\cf0  << gameBoard[\cf7 6\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 7\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 8\cf0 ] << \cf8 endl\cf0 ;\
+        \cf5 cout\cf0  << \cf3 "Type your number and press enter:\\n"\cf0 ; \cf6 //Now we need to tell the user to input their choice.\cf0 \
+        \
+        \cf5 cin\cf0  >> playerInput; \cf6 //"cin" statements are used for inputting data from the user. Thus, this line asks the user to enter a value for the variable "playerInput".\cf0 \
+        \
+        \cf6 //MARK: Fill in the spot with the player's letter\cf0 \
+        \cf6 //Now, this next part might look a little intimidating, but don't get overwhelmed. It's actually quite simple. This is a "switch" statement with 10 different "cases". Within the first 9 cases, the same lines of code are written with one difference between them: The number in the index position for the arrays are different (in case 1, the index is 0; in case 2, the index is 1; etc.).\cf0 \
+        \cf6 //The "switch" statement takes a variable in its "expression" area (between the parenthesis) which, in this case, is "playerInput". The "case" statements check the value of "playerInput", and run their corresponding code.\cf0 \
+        \cf6 //For instance, if "playerInput" holds the value "1", then the first case is a match. Then it runs the code within case 1. Let's take a closer look:\cf0 \
+        \
+        \cf4 switch\cf0  (playerInput) \{ \cf6 //This is the beginning of the switch statement. The variable "playerInput" is used to decide which case to enter.\cf0 \
+            \cf4 case\cf0  \cf7 '1'\cf0 : \cf6 //This is the first case. If "playerInput" holds the value "1", then this case is run. If not, then the program will skip over this case and check the next one.\cf0 \
+                \
+                \cf6 //This is an "if" statement. "if" statements are used to run code ONLY if their "condition" is true. The condition for this if statement is "spotWasUsed[0] == false". IF the first value in the array "spotWasUsed" is equal "false", THEN the code in the "if" statement will be run. ELSE, the code withing the "else" statement is run. (If spotWasUsed[0] is equal to "true", the code in the "else" statement.)\cf0 \
+                \cf4 if\cf0  (spotWasUsed[\cf7 0\cf0 ] == \cf4 false\cf0 ) \{\
+                    \cf6 //If the condition above is true, then that means the spot that the user selected has NOT been used. Thus:\cf0 \
+                    \
+                    gameBoard[\cf7 0\cf0 ] = whosTurnIsIt; \cf6 //Set the first spot in the game board equal to the value within "whosTurnIsIt". If it's X's turn, then "gameBoard[0]" will be equal to "X" instead of "1".\cf0 \
+                    spotWasUsed[\cf7 0\cf0 ] = \cf4 true\cf0 ; \cf6 //Then, we have to tell the program that this spot was already used. That way, if player O tries to use this spot again, then "spotWasUsed[0]" will equal "true" not "false", and the "else" condition will run.\cf0 \
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '2'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 1\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 1\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 1\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '3'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 2\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 2\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 2\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '4'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 3\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 3\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 3\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '5'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 4\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 4\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 4\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '6'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 5\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 5\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 5\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '7'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 6\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 6\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 6\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '8'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 7\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 7\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 7\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 '9'\cf0 :\
+                \cf4 if\cf0  (spotWasUsed[\cf7 8\cf0 ] == \cf4 false\cf0 ) \{\
+                    gameBoard[\cf7 8\cf0 ] = whosTurnIsIt;\
+                    spotWasUsed[\cf7 8\cf0 ] = \cf4 true\cf0 ;\
+                    switchTurns = \cf4 true\cf0 ;\
+                \} \cf4 else\cf0  \{\
+                    \cf5 cout\cf0  << \cf3 "\\nThat spot was used already. Try another one.\\n"\cf0 ;\
+                    switchTurns = \cf4 false\cf0 ;\
+                \}\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 case\cf0  \cf7 'E'\cf0 :\
+                \cf5 cout\cf0  << \cf3 "\\nExiting game...\\n"\cf0 ;\
+                gameIsPlaying = \cf4 false\cf0 ;\
+                switchTurns = \cf4 false\cf0 ;\
+                \cf4 break\cf0 ;\
+                \
+            \cf4 default\cf0 :\
+                \cf5 cout\cf0  << \cf3 "\\nInvalid input. Please try again.\\n"\cf0 ;\
+                switchTurns = \cf4 false\cf0 ;\
+        \}\
+        \
+        \cf6 //MARK: Check if someone won\cf0 \
+        \cf4 if\cf0  ( (gameBoard[\cf7 0\cf0 ] == gameBoard[\cf7 1\cf0 ]) && (gameBoard[\cf7 1\cf0 ] == gameBoard[\cf7 2\cf0 ]) ) \{ \cf6 //1, 2, and 3 match (horizontal)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 3\cf0 ] == gameBoard[\cf7 4\cf0 ]) && (gameBoard[\cf7 4\cf0 ] == gameBoard[\cf7 5\cf0 ]) ) \{ \cf6 //4, 5, and 6 match (horizontal)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 6\cf0 ] == gameBoard[\cf7 7\cf0 ]) && (gameBoard[\cf7 7\cf0 ] == gameBoard[\cf7 8\cf0 ]) ) \{ \cf6 //7, 8, and 9 match (horizontal)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 0\cf0 ] == gameBoard[\cf7 4\cf0 ]) && (gameBoard[\cf7 4\cf0 ] == gameBoard[\cf7 8\cf0 ]) ) \{ \cf6 //1, 5, and 9 match (diagonal)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 6\cf0 ] == gameBoard[\cf7 4\cf0 ]) && (gameBoard[\cf7 4\cf0 ] == gameBoard[\cf7 2\cf0 ]) ) \{ \cf6 //7, 5, and 3 match (diagonal)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 0\cf0 ] == gameBoard[\cf7 3\cf0 ]) && (gameBoard[\cf7 3\cf0 ] == gameBoard[\cf7 6\cf0 ]) ) \{ \cf6 //1, 4, and 7 match (vertical)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 1\cf0 ] == gameBoard[\cf7 4\cf0 ]) && (gameBoard[\cf7 4\cf0 ] == gameBoard[\cf7 7\cf0 ]) ) \{ \cf6 //2, 5, and 8 match (vertical)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( (gameBoard[\cf7 2\cf0 ] == gameBoard[\cf7 5\cf0 ]) && (gameBoard[\cf7 5\cf0 ] == gameBoard[\cf7 8\cf0 ]) ) \{ \cf6 //3, 6, and 9 match (vertical)\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ;\
+            switchTurns = \cf4 false\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  ( spotWasUsed[\cf7 0\cf0 ] && spotWasUsed[\cf7 1\cf0 ] && spotWasUsed[\cf7 2\cf0 ] && spotWasUsed[\cf7 3\cf0 ] && spotWasUsed[\cf7 4\cf0 ] && spotWasUsed[\cf7 5\cf0 ] && spotWasUsed[\cf7 6\cf0 ] && spotWasUsed[\cf7 7\cf0 ] && spotWasUsed[\cf7 8\cf0 ] ) \{ \cf6 //If every spot was used\cf0 \
+            \
+            gameIsPlaying = \cf4 false\cf0 ; \cf6 //We want the game to end\cf0 \
+            switchTurns = \cf4 false\cf0 ; \cf6 //We don't want to switch turns because we want to remember the player who just went\cf0 \
+            thereWasATie = \cf4 true\cf0 ; \cf6 //We want to signal that the game ended in a tie\cf0 \
+            \
+        \}\
+        \
+        \cf6 //MARK: Switch who's turn it is\cf0 \
+        \cf4 if\cf0  (switchTurns == \cf4 true\cf0 ) \{ \cf6 //If we leave switchTurns to true, then this if-statement will run the following code\cf0 \
+            \
+            \cf4 if\cf0  (whosTurnIsIt == \cf7 'X'\cf0 ) \{ \cf6 //If it is currently X's turn\cf0 \
+                \
+                whosTurnIsIt = \cf7 'O'\cf0 ; \cf6 //We want it to be O's turn\cf0 \
+                \
+            \} \cf4 else\cf0  \{ \cf6 //Otherwise, it must currently be O's turn\cf0 \
+                \
+                whosTurnIsIt = \cf7 'X'\cf0 ; \cf6 //And we want it to be X's turn\cf0 \
+                \
+            \}\
+            \
+        \}\
+        \
+    \} \cf6 //This marks the end of our while-loop. If gameIsPlaying is true, the loop will return to the top and start all over again.\cf0 \
+    \cf6 //If gameIsPlaying is false, the loop will end and we will move on to the following lines of code:\cf0 \
+    \
+    \cf6 //The operator "!=", means "not equal to". So if we chect (true != false), that condition would output to "true", because\cf0 \
+    \cf6 //true is "not equal to" false. Thus, the condition below is checking to see if the value within playerInput is "not equal to"\cf0 \
+    \cf6 //the letter "E". If it's not, we will enter the code within the if-statement. Otherwise, we just skip to the end of the program.\cf0 \
+    \cf4 if\cf0  (playerInput != \cf7 'E'\cf0 ) \{ \cf6 //If the players did not elect to exit the game by inputting the "E" character (rather than X or O)\cf0 \
+        \cf5 cout\cf0  << \cf8 endl\cf0 ;\
+        \cf4 if\cf0  (thereWasATie == \cf4 false\cf0 ) \{ \cf6 //If there was not a tie, meaning either player X or player O won, run the following code\cf0 \
+            \cf5 cout\cf0  << whosTurnIsIt << \cf3 " won! Well done!\\n"\cf0 ; \cf6 //Use whosTurnIsIt to output "X" or "O", depending on who's turn it was last.\cf0 \
+            \cf6 //Output the game board one last time:\cf0 \
+            \cf5 cout\cf0  << gameBoard[\cf7 0\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 1\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 2\cf0 ] << \cf8 endl\cf0 ;\
+            \cf5 cout\cf0  << gameBoard[\cf7 3\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 4\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 5\cf0 ] << \cf8 endl\cf0 ;\
+            \cf5 cout\cf0  << gameBoard[\cf7 6\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 7\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 8\cf0 ] << \cf8 endl\cf0 ;\
+            \cf5 cout\cf0  << \cf8 endl\cf0 ;\
+        \} \cf4 else\cf0  \{ \cf6 //If there was a tie, go into this section of code\cf0 \
+            \cf5 cout\cf0  << \cf3 "It's a tie! Well done, both of you.\\n"\cf0 ; \cf6 //Tell the players that the game ended in a tie\cf0 \
+            \cf5 cout\cf0  << gameBoard[\cf7 0\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 1\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 2\cf0 ] << \cf8 endl\cf0 ;\
+            \cf5 cout\cf0  << gameBoard[\cf7 3\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 4\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 5\cf0 ] << \cf8 endl\cf0 ;\
+            \cf5 cout\cf0  << gameBoard[\cf7 6\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 7\cf0 ] << \cf3 " "\cf0  << gameBoard[\cf7 8\cf0 ] << \cf8 endl\cf0 ;\
+            \cf5 cout\cf0  << \cf8 endl\cf0 ;\
+        \}\
+    \}\
+    \
+    \
+    \
+    \cf4 return\cf0  \cf7 0\cf0 ;\
+\}}
