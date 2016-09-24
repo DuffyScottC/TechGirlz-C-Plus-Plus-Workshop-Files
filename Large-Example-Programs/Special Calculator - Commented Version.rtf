@@ -1,0 +1,100 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red196\green26\blue22;\red0\green116\blue0;
+\red170\green13\blue145;\red92\green38\blue153;\red28\green0\blue207;\red46\green13\blue110;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab543
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 #include \cf3 <iostream>\cf2  \cf4 //Just ignore this line. This "imports", or brings in, a whole bunch of code that other people have written for us (to make writing our code easier).\cf0 \
+\
+\cf5 using\cf0  \cf5 namespace\cf0  \cf6 std\cf0 ; \cf4 //Also ignore this line. This makes the code we are writing easier to write. It is basically a shortcut for writing code more easily and more quickly.\cf0 \
+\
+\cf5 int\cf0  main() \{\
+    \cf4 //This program does several different math calculations that would be tedious to accomplish by hand. It calculates the following:\cf0 \
+    \cf4 //1. Average of numbers input\cf0 \
+    \cf4 //2. Factorial (5 factorial is written as 5!, and 5! = 5*4*3*2*1. 6! = 6*5*4*3*2*1, etc.)\cf0 \
+    \
+    \cf4 //Variables are used throughout the program to hold different values of different types.\cf0 \
+    \cf5 bool\cf0  proceed = \cf5 true\cf0 ; \cf4 //This is a variable. Variables can be called anything you want, but I called this one "proceed". "bool" is a simple type of variable that can hold only 2 possible values: true or false. Right now, "proceed" holds the value true. Notice the semicolon (;) at the end of the line. This shows the compiler that the line ends at the semicolon.\cf0 \
+    \cf4 //This program will run in what is called a loop. A loop is something that runs the same code over and over until a certain condition is met. We will use the "proceed" function as the "condition" asyou will see below.\cf0 \
+    \cf4 //But first, we need some more variables.\cf0 \
+    \cf5 int\cf0  choice = \cf7 0\cf0 ; \cf4 //This variable holds integers (int is short for integer). An integer is a number, like 1, 5, 3, or 7, WITHOUT decimals. So 4 is an integer, but 5.2 is not. This variable is used to hold the user's menu choice.\cf0 \
+    \cf5 double\cf0  average = \cf7 0\cf0 ; \cf4 //We need a number to hold the average once it is calculated.\cf0 \
+    \cf5 int\cf0  input = \cf7 1\cf0 ; \cf4 //This variable holds integers as well. This one will be used to hold the number the user wants to do the calculation on.\cf0 \
+    \cf5 int\cf0  sum = \cf7 0\cf0 ; \cf4 //This variable is used to hold a running sum (or addition) of all the numbers the user will input if they want to find the average.\cf0 \
+    \cf5 int\cf0  tally = \cf7 0\cf0 ; \cf4 //We need to keep track of how many numbers the user input when calculating the average, so we need a tally variable.\cf0 \
+    \cf5 int\cf0  answer = \cf7 1\cf0 ; \cf4 //We need something to hold the answer to our factorial calculation. We will use "answer" for this.\cf0 \
+    \
+    \cf6 cout\cf0  << \cf3 "To input a value, type it into the console and press enter."\cf0  << \cf8 endl\cf0 ; \cf4 //cout statements are used to "print" text to the console. This cout statement will tell the console to show the text "To input a value, type it into the console and press enter.". The "endl" keyword is equivalent to pressing the "Enter" key on your keyboard. It creates a new line in the console window.\cf0 \
+    \
+    \cf4 //Curly brackets "\{" are used to indicate chunks of code that are grouped together. The curly bracket at the end of the "while" statement below indicates the start of the "while loop".\cf0 \
+    \
+    \
+    \cf5 while\cf0  (proceed == \cf5 true\cf0 ) \{ \cf4 //This is a while statement. While loops are used to loop the same code over and over until the while loop's "condition" is false. In this case, the condition is the part that says "proceed == true". This part asks "is the value "proceed" contains equal to "true"?" If it is, the loop runs. If it is not (if "proceed" equals "false"), then the loop will stop running. As long as the loop is running, the program will continue. When the loop ends, the program will be go to the end.\cf0 \
+        \
+        input = \cf7 1\cf0 ; \cf4 //Before the code starts, we need to make sure that "input" is not equal to 0. This is because a lot of the following code won't run if "input" = 0. Don't worry too much about this line for now, though.\cf0 \
+        \
+        \cf4 //We need to output a menu of options to the user.\cf0 \
+        \cf6 cout\cf0  << \cf3 "1. Average"\cf0  << \cf8 endl\cf0 ;\
+        \cf6 cout\cf0  << \cf3 "2. Factorial"\cf0  << \cf8 endl\cf0 ;\
+        \cf6 cout\cf0  << \cf3 "3. Exit Program"\cf0  << \cf8 endl\cf0 ;\
+        \cf6 cout\cf0  << \cf3 "Enter the number beside the option you want to choose:"\cf0  << \cf8 endl\cf0 ;\
+        \cf6 cin\cf0  >> choice; \cf4 //cin statements like this one are used to get user input. When a user wants to tell the program which choice they want, they will enter a number in the console and press enter. When that happens, this cin statement will catch the number the user typed and stuff it inside our "choice" variable.\cf0 \
+        \
+        \cf4 //We now have to check what value is contained in "choice". The user input a number, but we have to act on it. We use "if statements" like the one below to act differently depending on what code the user entered.\cf0 \
+        \cf5 if\cf0  (choice == \cf7 1\cf0 ) \{ \cf4 //Every "if statement" has a condition. In this case, the condition is "choice == 1". This asks "is the value within "choice" equal to 1?". If it is, then the code contained within the two curly brackets "\{" and "\}" will be run. If "choice" equals something other than 1, then the code inside these curly brackets will be skipped and we will go to the "if-else statement" below.\cf0 \
+            \
+            \cf4 //If the user entered 1, then they want option number 1: Average. So we have to calculate the average. We need two things: The number of numbers input, and the sum of all the numbers input. Average = sum/tally.\cf0 \
+            \
+            \cf4 //We want the user to be able to input as many numbers as they want, so we need a loop.\cf0 \
+            \cf5 while\cf0  (input != \cf7 0\cf0 ) \{ \cf4 //This while loop's condition asks "is the value inside "input" NOT equal to 0?" (the != means "not equal to"). The loop will run as long as input does not equal zero. If the user enters 0, the loop will stop because the condition will no longer be true.\cf0 \
+                \cf6 cout\cf0  << \cf3 "Please enter a number (0 to stop):"\cf0  << \cf8 endl\cf0 ; \cf4 //We need to tell the user what to do now.\cf0 \
+                \cf6 cin\cf0  >> input; \cf4 //Now we need to recieve the user's input and stuff it into our "input" variable.\cf0 \
+                sum = sum + input; \cf4 //We need to add the number the user input to the current running sum. If sum starts as 0, and the user inputs 3, then sum would then be 0+3=3. If the user entered 5 next, then sum would be 3+5=8.\cf0 \
+                tally++; \cf4 //we add 1 to "tally" using the ++ operator, which means "add one to this variable". If tally=0, then tally++ makes tally=1.\cf0 \
+            \} \cf4 //Then we return to the top of the loop and start again. If the user enters 0, then we will move on to the following code:\cf0 \
+            \
+            tally--; \cf4 //We use the -- operator to subtract 1 from "tally". This is because when the user enters 0 to stop, tally still adds 1 (even though adding zero doesn't change the sum). If the user enters 2, 3, 4, and then 0, then tally will be 4 (4 numbers were entered, including 0). But we want to ignore zero, so we subtract 1 from tally to make it 3.\cf0 \
+            \
+            \cf5 if\cf0  (tally > \cf7 0\cf0 ) \{ \cf4 //We have to make sure the user entered at least one number, and didn't just enter 0 as the first number. If the tally is greater than 0, then the user entered at least 1 number.\cf0 \
+                average = sum / tally; \cf4 //We use the division operator "/" to calculate division. sum/tally means sum divided by tally. If sum is 9 and tally is 3, then sum/tally=9/3=3. Since "average" is a double type, we can get a decimal answer if neccessary.\cf0 \
+                \cf6 cout\cf0  << \cf3 "_________The average of the numbers is: "\cf0  << average << \cf8 endl\cf0 ; \cf4 //The cout statement will print 3 to the console as a result. It will say "The average of the numbers is: 3".\cf0 \
+            \} \cf5 else\cf0  \{\
+                \cf6 cout\cf0  << \cf3 "_________You must enter at least 1 number for there to be an average."\cf0  << \cf8 endl\cf0 ;\
+            \}\
+            \
+            \cf6 cout\cf0  << \cf3 "Going back to menu..."\cf0  << \cf8 endl\cf0 ;\
+            \cf4 //Now we reach the end of the Average section. We will skip the "else-if" and "else" statements below, and go straight back to the top of the main loop. Then we do it all again.\cf0 \
+        \} \cf5 else\cf0  \cf5 if\cf0  (choice == \cf7 2\cf0 ) \{ \cf4 //else-if statements are used to check for another condition if the previous condition turned out to be false. In this else-if statement, we are checking to see if "choice" equals 2. If the user chose option 2, then we want to calculate the factorial.\cf0 \
+            \
+            \cf6 cout\cf0  << \cf3 "Please enter a number:"\cf0  << \cf8 endl\cf0 ; \cf4 //We need to tell the user what to do\cf0 \
+            \cf6 cin\cf0  >> input; \cf4 //we need to get the user's input\cf0 \
+            \cf6 cout\cf0  << input << \cf3 "! is equal to "\cf0 ; \cf4 //This is the start of a sentence. The rest of the sentece is after the while loop.\cf0 \
+            \
+            \cf5 while\cf0  (input > \cf7 0\cf0 ) \{ \cf4 //This code will run as long as input is greater than 0. If it is equal to or less than zero, the loop will stop.\cf0 \
+                answer = answer * input; \cf4 //We need to multiply answer by input. Let's say that input = 5. The answer will equal 1*5=5.\cf0 \
+                input--; \cf4 //Then we subtract 1 from the input.\cf0 \
+                \
+                \cf4 //The while loop runs again. If input started out as 5, then the first time this loop runs answer=5 and input=4. The second time around, answer will equal 5*4=20, and input=3. The third time around, answer=20*3=60 and input=2. The fourth time around answer=60*2=120 and input=1. The fifth time around answer=120*1=120 and input=0. Since input=0, the loop condition is false, and the loop ends. Thus, 5! = 120, because answer=120 at the end of the loop.\cf0 \
+            \}\
+            \
+            \cf6 cout\cf0  << answer << \cf3 "."\cf0  << \cf8 endl\cf0 ; \cf4 //This is the rest of the sentece that was started above. Can you see why we needed to write this sentence in such an odd way?\cf0 \
+            \cf6 cout\cf0  << \cf3 "Going back to menu..."\cf0  << \cf8 endl\cf0 ;\
+            \
+        \} \cf5 else\cf0  \cf5 if\cf0  (choice == \cf7 3\cf0 ) \{ \cf4 //If the user chose option 3, then they want to exit the program.\cf0 \
+            proceed = \cf5 false\cf0 ; \cf4 //We want "proceed" to be false, so that we can exit the loop\cf0 \
+        \} \cf5 else\cf0  \{ \cf4 //This else statement is a "catch-all" case. If the user enters anything other than what we told them to, we need to tell them that they did it wrong, and allow them to try again. Note that this does not have a condition statement, which means that if none of the above conditions are met, this will run no matter what the user input.\cf0 \
+            \cf6 cout\cf0  << \cf3 "That is not an option. Please enter 1, 2, or 3."\cf0  << \cf8 endl\cf0 ; \cf4 //We need to tell the user what they did wrong, so that they can fix it.\cf0 \
+        \}\
+        \
+    \} \cf4 //This is the end of the main while loop. At this point, the while loop checks the condition "proceed == true". If "proceed" contains the value "true", then the loop will run again. If "proceed" equals false, however, the loop will end and we will go to the following code:\cf0 \
+    \
+    \cf6 cout\cf0  << \cf3 "Exiting program..."\cf0  << \cf8 endl\cf0 ;\
+    \cf6 cout\cf0  << \cf3 "Have a nice day!"\cf0  << \cf8 endl\cf0 ;\
+    \
+    \cf5 return\cf0  \cf7 0\cf0 ; \cf4 //This return statement tells the compiler that the program should end, and that everything went smoothly.\cf0 \
+\} \cf4 //This is the closing bracket, indicating the end of the program.\cf0 \
+\
+\
+}

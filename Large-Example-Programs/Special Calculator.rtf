@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red100\green56\blue32;\red196\green26\blue22;\red170\green13\blue145;
+\red92\green38\blue153;\red28\green0\blue207;\red46\green13\blue110;}
+\margl1440\margr1440\vieww10800\viewh9720\viewkind0
+\deftab543
+\pard\tx543\pardeftab543\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 #include \cf3 <iostream>\cf0 \
+\
+\cf4 using\cf0  \cf4 namespace\cf0  \cf5 std\cf0 ;\
+\
+\cf4 int\cf0  main() \{\
+    \cf4 bool\cf0  proceed = \cf4 true\cf0 ;\
+    \cf4 int\cf0  choice = \cf6 0\cf0 ;\
+    \cf4 double\cf0  average = \cf6 0\cf0 ;\
+    \cf4 int\cf0  input = \cf6 1\cf0 ;\
+    \cf4 int\cf0  sum = \cf6 0\cf0 ;\
+    \cf4 int\cf0  tally = \cf6 0\cf0 ;\
+    \cf4 int\cf0  answer = \cf6 1\cf0 ;\
+    \
+    \cf5 cout\cf0  << \cf3 "To input a value, type it into the console and press enter."\cf0  << \cf7 endl\cf0 ;\
+    \
+    \
+    \cf4 while\cf0  (proceed == \cf4 true\cf0 ) \{\
+        \
+        input = \cf6 1\cf0 ;\
+		\cf5 cout\cf0  << \cf3 "1. Average"\cf0  << \cf7 endl\cf0 ;\
+        \cf5 cout\cf0  << \cf3 "2. Factorial"\cf0  << \cf7 endl\cf0 ;\
+        \cf5 cout\cf0  << \cf3 "3. Exit Program"\cf0  << \cf7 endl\cf0 ;\
+        \cf5 cout\cf0  << \cf3 "Enter the number beside the option you want to choose:"\cf0  << \cf7 endl\cf0 ;\
+        \cf5 cin\cf0  >> choice;\
+        \cf4 if\cf0  (choice == \cf6 1\cf0 ) \{\
+            \cf4 while\cf0  (input != \cf6 0\cf0 ) \{\
+                \cf5 cout\cf0  << \cf3 "Please enter a number (0 to stop):"\cf0  << \cf7 endl\cf0 ;\
+                \cf5 cin\cf0  >> input;\
+                sum = sum + input;\
+                tally++;\
+            \}\
+			tally--;\
+            \cf4 if\cf0  (tally > \cf6 0\cf0 ) \{\
+                average = sum / tally;\
+                \cf5 cout\cf0  << \cf3 "_________The average of the numbers is: "\cf0  << average << \cf7 endl\cf0 ;\
+            \} \cf4 else\cf0  \{\
+                \cf5 cout\cf0  << \cf3 "You must enter at least 1 number for there to be an average."\cf0  << \cf7 endl\cf0 ;\
+            \}\
+            \cf5 cout\cf0  << \cf3 "Going back to menu..."\cf0  << \cf7 endl\cf0 ;\
+        \} \cf4 else\cf0  \cf4 if\cf0  (choice == \cf6 2\cf0 ) \{\
+            \
+            \cf5 cout\cf0  << \cf3 "Please enter a number:"\cf0  << \cf7 endl\cf0 ;\
+            \cf5 cin\cf0  >> input;\
+            \cf5 cout\cf0  << input << \cf3 "! is equal to "\cf0 ;\
+            \
+            \cf4 while\cf0  (input > \cf6 0\cf0 ) \{\
+                answer = answer * input;\
+                input--;\
+            \}\
+            \
+            \cf5 cout\cf0  << answer << \cf3 "."\cf0  << \cf7 endl\cf0 ;\
+            \cf5 cout\cf0  << \cf3 "Going back to menu..."\cf0  << \cf7 endl\cf0 ;\
+            \
+        \} \cf4 else\cf0  \cf4 if\cf0  (choice == \cf6 3\cf0 ) \{\
+            proceed = \cf4 false\cf0 ;\
+        \} \cf4 else\cf0  \{\
+            \cf5 cout\cf0  << \cf3 "That is not an option. Please enter 1, 2, or 3."\cf0  << \cf7 endl\cf0 ; \
+        \}\
+        \
+    \}\
+    \
+    \cf5 cout\cf0  << \cf3 "Exiting program..."\cf0  << \cf7 endl\cf0 ;\
+    \cf5 cout\cf0  << \cf3 "Have a nice day!"\cf0  << \cf7 endl\cf0 ;\
+    \
+    \cf4 return\cf0  \cf6 0\cf0 ;\
+\}}
